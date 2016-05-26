@@ -69,7 +69,7 @@ public class Log4jDeserializer implements EventDeserializer {
 	    this.maxLineLength = context.getInteger(MAXLINE_KEY, MAXLINE_DFLT);
 	    this.isOpen = true;
 	    
-	    p = Pattern.compile("^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}");
+	    p = Pattern.compile(pattern);
 	  }
 
 	
@@ -110,9 +110,10 @@ public class Log4jDeserializer implements EventDeserializer {
 						read.setLength(0);
 						return event;
 					}
-				}else{
+				}else if(write.length() > 0){
 					write.append("\n"+line);
 				}
+				//错误数据放弃
 			}
 		}
 
