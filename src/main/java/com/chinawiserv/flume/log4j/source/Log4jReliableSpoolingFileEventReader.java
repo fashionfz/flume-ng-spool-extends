@@ -501,6 +501,7 @@ public class Log4jReliableSpoolingFileEventReader implements ReliableEventReader
 
 			ResettableInputStream in = new ResettableFileInputStream(file, tracker,
 					ResettableFileInputStream.DEFAULT_BUF_SIZE, inputCharset, decodeErrorPolicy);
+			
 //			EventDeserializer deserializer = EventDeserializerFactory.getInstance(deserializerType, deserializerContext,
 //					in);
 			//TODO 修改成自己的Deserializer

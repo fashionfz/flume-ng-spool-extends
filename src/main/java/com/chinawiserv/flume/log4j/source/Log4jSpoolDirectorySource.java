@@ -124,7 +124,7 @@ public class Log4jSpoolDirectorySource extends AbstractSource implements Configu
 		}
 
 		Runnable runner = new SpoolDirectoryRunnable(reader, sourceCounter);
-		executor.scheduleWithFixedDelay(runner, 0, POLL_DELAY_MS, TimeUnit.MILLISECONDS);
+		executor.scheduleWithFixedDelay(runner, 0, POLL_DELAY_MS, TimeUnit.SECONDS);
 
 		super.start();
 		logger.debug("SpoolDirectorySource source started");
